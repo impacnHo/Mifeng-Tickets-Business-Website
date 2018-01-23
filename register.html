@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>注册帐号-蜜蜂电影</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style type="text/css">
+  .brandIcon{
+    max-width: 28px;
+    max-height: 28px;
+  }
+  #mynav-left{
+    margin-left: 8%;
+  }
+  #mynav-right{
+    margin-right: 8%;
+  }
+  .myform-control{
+    width: 200px;
+    display: inline;
+  }
+  .titleFont{
+    color: red;
+    font-family: 微软雅黑;
+  }
+  .title{
+    font-size: 20px;
+    color: grey;
+  }
+  .title:hover{
+    color: red;
+  }
+  .col-md-2{
+    height: 63px;
+  }
+  .foot-wrap{
+    border-top: red 3px solid;
+    background-color: #242424;
+    margin-top:40px;
+  }
+  .foot_a{
+    color: #CCCCCC;
+  }
+  .foot_a:hover{
+    color: #CCCCCC;
+  }
+
+</style>
+<script type="text/javascript">
+  function check(){
+    var btn = document.getElementById('btn_check');
+    var waiting = document.getElementById('waiting');
+    var num = document.getElementById('num').value;
+    btn.value = "验证中……";
+    waiting.style.display = "inline";
+    if(num != null && num != ""){
+      setTimeout(function()
+      {
+        waiting.style.display = "none";
+        btn.value = "验证成功，下一步";
+        document.getElementById('a1').style.color="red";
+        document.getElementById('s1').className="label label-danger"
+      },1000)
+    }else{
+      setTimeout(function(){
+        waiting.style.display = "none";
+        btn.value = "验证失败";
+        document.getElementById('num').focus();
+      },1000)
+    }
+  }
+
+  function check2(){
+    var waiting = document.getElementById('waiting2');
+    var p1 = document.getElementById('phonenum').value;
+    var p2 = document.getElementById('phonenum2').value;
+    var username = document.getElementById('username').value;
+
+    waiting.style.display = "inline";
+
+    if(p1 == "" || p1 == null){
+      document.getElementById('phonenum').focus();
+      alert("登录密码未输入");
+      waiting.style.display = "none";
+    }else if(p2 == "" || p2 ==null){
+      document.getElementById('phonenum2').focus();
+      alert("确认密码未输入");
+      waiting.style.display = "none";
+    }else if(username == "" || username == null){
+      document.getElementById('username').focus();
+      alert("用户名未输入");
+      waiting.style.display = "none";
+    }else if(p1!=p2){
+      alert("密码重复输入不一致");
+      waiting.style.display = "none";
+    }else{
+      setTimeout(function(){
+        waiting.style.display = "none";
+        document.getElementById('btn_next2').value="提交成功，下一步";
+        document.getElementById('a2').style.color="red";
+        document.getElementById('s2').className="label label-danger"
+      },1000)
+    }
+  }
+
+  function check3(){
+    var cardnum = document.getElementById('cardnum').value;
+    var cardname = document.getElementById('cardname').value;
+    var idnum = document.getElementById('idnum').value;
+    var cardphone = document.getElementById('cardphone').value;
+    var waiting = document.getElementById('waiting3');
+
+    waiting.style.display = "inline";
+
+    if(cardnum == "" || cardnum == null){
+      document.getElementById('cardnum').focus();
+      alert("银行卡号未输入");
+    }else if(cardname == "" || cardname ==null){
+      document.getElementById('cardname').focus();
+      alert("持卡人姓名未输入");
+    }else if(idnum == "" || idnum == null){
+      document.getElementById('idnum').focus();
+      alert("身份证号码未输入");
+    }else if(cardphone == "" || cardphone == null){
+      document.getElementById('cardphone').focus();
+      alert("手机号码未输入");
+    }else{
+      setTimeout(function(){
+        waiting.style.display = "none";
+        document.getElementById('btn_next3').value="下一步";
+        document.getElementById('a3').style.color="red";
+        document.getElementById('s3').className="label label-danger"
+        document.getElementById('a4').style.color="red";
+        document.getElementById('s4').className="label label-danger"
+      },1000)
+    }
+  }
+
+</script>
+</head>
+<body>
+  <!--导航栏-->
+    <nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!--图标-->
+    <div class="navbar-header" id="mynav-left">
+      <a class="navbar-brand" href="index.html">
+        <img class="brandIcon img-circle" src="icon.jpg" alt="BrandIcon">
+      </a>
+    </div>
+    <!--左导航-->
+    <div>
+      <ul class="nav navbar-nav">
+        <li><a href="login.html" style="color: red;">亲，请登录</a></li>
+        <li><a href="#">免费注册</a></li>
+        <li><a href="download.html">手机app购票</a></li>
+        <!--中间搜索框-->
+        <li>
+          <form class="navbar-form navbar-middle" role="search" style="margin-left: 80px;">
+            <div class="form-group">
+              <input style="width: 300px;height: 35px;" type="text" class="form-control" placeholder="演员、电影或影院">
+            </div>
+            <button type="submit" class="btn btn-danger">搜索</button>
+          </form>
+        </li>
+      </ul>
+    </div>
+    <!--右导航-->
+    <ul class="nav navbar-nav navbar-left" id="mynav-left">
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+          <span class="glyphicon glyphicon-user"></span> 我的账户<span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="#">我买到的东西</a></li>
+          <li><a href="#">我的足迹</a></li>
+        </ul>
+      </li>
+      <li><a href="#"><span class="glyphicon glyphicon-shopping-cart" style="color: red;"></span> 购物车</a></li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+          <span class="glyphicon glyphicon-star"></span> 收藏夹<span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="#">收藏的电影</a></li>
+          <li><a href="#">收藏的台词</a></li>
+        </ul>
+      </li>
+      <!--分割线！-->
+      <li><a href="#"><span class="glyphicon glyphicon-earphone"> 联系客服</span></a></li>
+    </ul>
+  </div>
+  </nav>
+
+  <!--注册框-->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <span style="font-size: 40px; color: red;font-family: 黑体;">蜜蜂电影</span>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="font-size: 23px;">用户注册</span>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <ul class="nav nav-tabs">
+          <li class="active">
+            <a id="a1" style="color: grey;" href="#r1" data-toggle="tab"><span id="s1" class="label label-default">1</span>设置用户名</a>
+          </li>
+          <li>
+            <a id="a2" style="color: grey;" href="#r2" data-toggle="tab"><span id="s2" class="label label-default">2</span>填写账户信息</a>
+          </li>
+          <li>
+            <a id="a3" style="color: grey;" href="#r3" data-toggle="tab"><span id="s3" class="label label-default">3</span>设置支付方式</a>
+          </li>
+          <li>
+            <a id="a4" style="color: grey;" href="#r4" data-toggle="tab"><span id="s4" class="label label-default">4</span>注册成功</a>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane fade in active" id="r1">
+            <div align="center">
+              <br>
+              <input id="num" style="width: 400px" type="text" class="form-control" placeholder="+86 手机号码">
+              <br>
+              <input id="btn_check" style="width: 400px" type="button" class="btn btn-danger" value="验证" onclick="check();">
+              <br>
+              <img id="waiting" style="display: none;" src="waiting.gif" alt="加载图">
+
+            </div>
+          </div>
+          <div class="tab-pane fade " id="r2">
+            <div align="center">
+              <br>
+              <h4>设置登录密码</h4>
+              <br>
+              <input id="phonenum" style="width: 400px" type="password" class="form-control" placeholder="登录密码">
+              <br>
+              <input id="phonenum2" style="width: 400px" type="password" class="form-control" placeholder="密码确认"><br>
+              <h4>设置会员名</h4><br>
+              <input id="username" style="width: 400px" type="text" class="form-control" placeholder="会员名">
+              <br>
+              <input id="btn_next2" type="button" style="width: 200px;" class="btn btn-danger" value="提交" onclick="check2();"><br>
+              <img id="waiting2" style="display: none;" src="waiting.gif" alt="加载图">
+            </div>
+          </div>
+          <div class="tab-pane fade " id="r3">
+            <div align="center">
+              <br>
+              <input id="cardnum" style="width: 400px" type="text" class="form-control" placeholder="银行卡号"><br>
+              <input id="cardname" style="width: 400px" type="text" class="form-control" placeholder="持卡人姓名"><br>
+              <input id="idnum" style="width: 400px" type="text" class="form-control" placeholder="身份证号码"><br>
+              <input id="cardphone" style="width: 400px" type="text" class="form-control" placeholder="手机号码"><br>
+              <input id="btn_next3" type="button" style="width: 200px;" class="btn btn-danger" value="同意协议并确定" onclick="check3();"><br>
+              <img id="waiting3" style="display: none;" src="waiting.gif" alt="加载图">
+              <br>
+              <a href="#">快捷支付服务相关协议</a>
+            </div>
+          </div>
+          <div class="tab-pane fade " id="r4">
+            <div align="center" style="background-color: #D1EEEE;height: 100px;">
+              <br>
+              <span style="font-size: 20px;" class=" glyphicon glyphicon-ok"></span>
+              <span style="font-size: 20px;">恭喜注册成功！<a href="index.html">立即购票吧！</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--底部-->
+  <footer class="container-fluid foot-wrap">
+      <br>
+      <div class="row" style="height: 100px;">
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-2">
+              <h4 style="color: white;">选座购票流程</h3>
+              <ul>
+                  <li><a class="foot_a" href="#">选择影片和场次</a></li>
+                  <li><a class="foot_a" href="#">选择中意的座位</a></li>
+                  <li><a class="foot_a" href="#">支付并收到取票短信</a></li>
+              </ul>
+          </div>
+
+          <div class="col-md-2">
+              <h4 style="color: white;">取票流程</h3>
+              <ul>
+                  <li><a class="foot_a" href="#">收到取票信息</a></li>
+                  <li><a class="foot_a" href="#">影院自动取票</a></li>
+                  <li><a class="foot_a" href="#">短息重发方式</a></li>
+              </ul>
+          </div>
+
+          <div class="col-md-2">
+              <h4 style="color: white;">常见问题</h3>
+              <ul>
+                  <li><a class="foot_a" href="#">是否支持退换票</a></li>
+                  <li><a class="foot_a" href="#">填错手机号怎么办</a></li>
+                  <li><a class="foot_a" href="#">更多问题>></a></li>
+              </ul>
+          </div>
+
+          <div class="col-md-2">
+              <h4 style="color: white;">协议规范</h3>
+              <ul>
+                  <li><a class="foot_a" href="#">用户服务协议</a></li>
+                  <li><a class="foot_a" href="#">食品管理规范</a></li>
+              </ul>
+          </div>
+
+          <div class="col-md-2">
+          </div>
+      </div>
+      <div class="container">
+          <hr style="color: white;">
+          <p align="center" style="color: white;font-size: 17px;font-style: italic;">
+              &copy;蜜蜂电影&nbsp;mifeng.com
+          </p>
+      </div>
+  </footer>
+</body>
+</html>

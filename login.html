@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>登录帐号-蜜蜂电影</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style type="text/css">
+  .brandIcon{
+    max-width: 28px;
+    max-height: 28px;
+  }
+  #mynav-left{
+    margin-left: 8%;
+  }
+  #mynav-right{
+    margin-right: 8%;
+  }
+  .myform-control{
+    width: 200px;
+    display: inline;
+  }
+  .titleFont{
+    color: red;
+    font-family: 微软雅黑;
+  }
+  .title{
+    font-size: 20px;
+    color: grey;
+  }
+  .title:hover{
+    color: red;
+  }
+  .col-md-2{
+    height: 63px;
+  }
+  .foot-wrap{
+    border-top: red 3px solid;
+    background-color: #242424;
+    margin-top:40px;
+  }
+  .foot_a{
+    color: #CCCCCC;
+  }
+  .foot_a:hover{
+    color: #CCCCCC;
+  }
+  .login_a{
+    color: black;
+  }
+  .login_a:hover{
+    color: red;
+  }
+
+</style>
+<script type="text/javascript">
+  function check(){
+    var un = document.getElementById("un").value;
+    var pw = document.getElementById("pw").value;
+    if(un == null || un == ""){
+      alert("用户名不能为空");
+      document.getElementById('un').focus();
+    }else if(pw == null || pw ==""){
+      alert("密码不能为空");
+      document.getElementById('pw').focus();
+    }else{
+      alert("登录成功！");
+    }
+  }
+</script>
+</head>
+<body>
+  <!--导航栏-->
+    <nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!--图标-->
+    <div class="navbar-header" id="mynav-left">
+      <a class="navbar-brand" href="index.html">
+        <img class="brandIcon img-circle" src="icon.jpg" alt="BrandIcon">
+      </a>
+    </div>
+    <!--左导航-->
+    <div>
+      <ul class="nav navbar-nav">
+        <li><a href="#" style="color: red;">亲，请登录</a></li>
+        <li><a href="register.html">免费注册</a></li>
+        <li><a href="download.html">手机app购票</a></li>
+        <!--中间搜索框-->
+        <li>
+          <form class="navbar-form navbar-middle" role="search" style="margin-left: 80px;">
+            <div class="form-group">
+              <input style="width: 300px;height: 35px;" type="text" class="form-control" placeholder="演员、电影或影院">
+            </div>
+            <button type="submit" class="btn btn-danger">搜索</button>
+          </form>
+        </li>
+      </ul>
+    </div>
+    <!--右导航-->
+    <ul class="nav navbar-nav navbar-left" id="mynav-left">
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+          <span class="glyphicon glyphicon-user"></span> 我的账户<span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="#">我买到的东西</a></li>
+          <li><a href="#">我的足迹</a></li>
+        </ul>
+      </li>
+      <li><a href="#"><span class="glyphicon glyphicon-shopping-cart" style="color: red;"></span> 购物车</a></li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+          <span class="glyphicon glyphicon-star"></span> 收藏夹<span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="#">收藏的电影</a></li>
+          <li><a href="#">收藏的台词</a></li>
+        </ul>
+      </li>
+      <!--分割线！-->
+      <li><a href="#"><span class="glyphicon glyphicon-earphone"> 联系客服</span></a></li>
+    </ul>
+  </div>
+  </nav>
+
+  <!--登录框-->
+  <div class="container-fuild" style="background-image: url(login_bg.jpg);background-position: center; height: 620px;">
+    <div class="row">
+      <div class="col-md-8"></div>
+      <div class="col-md-4" style="margin-top: 10%;">
+        <div style="background-color: white;filter: opacity(0.9);width: 350px;height: 355px;">
+          <form action="">
+            <div align="center"">
+              <br><br>
+              <h4>密码登录</h4>
+              <input id="un" style="width: 250px" class="form-control" placeholder="账户名" type="text">
+              <br>
+              <input id="pw" style="width: 250px" class="form-control" placeholder="密 码" type="password">
+              <br>
+              <input style="width: 250px;" type="button" class="btn btn-danger" value="登录" onclick="check();">
+              <hr>
+              <a class="login_a" href="#">忘记密码</a>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <a class="login_a" href="#">免费注册</a>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--底部-->
+  <footer class="container-fluid foot-wrap">
+      <br>
+      <div class="row" style="height: 100px;">
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-2">
+              <h4 style="color: white;">选座购票流程</h3>
+              <ul>
+                  <li><a class="foot_a" href="#">选择影片和场次</a></li>
+                  <li><a class="foot_a" href="#">选择中意的座位</a></li>
+                  <li><a class="foot_a" href="#">支付并收到取票短信</a></li>
+              </ul>
+          </div>
+
+          <div class="col-md-2">
+              <h4 style="color: white;">取票流程</h3>
+              <ul>
+                  <li><a class="foot_a" href="#">收到取票信息</a></li>
+                  <li><a class="foot_a" href="#">影院自动取票</a></li>
+                  <li><a class="foot_a" href="#">短息重发方式</a></li>
+              </ul>
+          </div>
+
+          <div class="col-md-2">
+              <h4 style="color: white;">常见问题</h3>
+              <ul>
+                  <li><a class="foot_a" href="#">是否支持退换票</a></li>
+                  <li><a class="foot_a" href="#">填错手机号怎么办</a></li>
+                  <li><a class="foot_a" href="#">更多问题>></a></li>
+              </ul>
+          </div>
+
+          <div class="col-md-2">
+              <h4 style="color: white;">协议规范</h3>
+              <ul>
+                  <li><a class="foot_a" href="#">用户服务协议</a></li>
+                  <li><a class="foot_a" href="#">食品管理规范</a></li>
+              </ul>
+          </div>
+
+          <div class="col-md-2">
+          </div>
+      </div>
+      <div class="container">
+          <hr style="color: white;">
+          <p align="center" style="color: white;font-size: 17px;font-style: italic;">
+              &copy;蜜蜂电影&nbsp;mifeng.com
+          </p>
+      </div>
+  </footer>
+</body>
+</html>
