@@ -1,0 +1,11 @@
+# 一个基于Bootstrap2的静态电影票务网站
+* 主页：index.html
+* 影院列表页面：cinema.html
+* 电影列表页面：movie.html
+* 电影详情页面：movie_d1.html/movie_d2.html
+* 选座页面：chooseseat.html/chooseseat2.html
+* 支付页面：pay.html/pay2.html
+* 购票成功页面：success.html
+* 注册页面：register.html
+* 登录页面：login.html
+* 下载app页面：download.html
